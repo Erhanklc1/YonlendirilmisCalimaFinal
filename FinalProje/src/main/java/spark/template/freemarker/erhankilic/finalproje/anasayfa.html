@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Anasayfa</title>
+</head>
+<body background= "C:\Users\90545\Desktop\background.jpg"> 
+
+<h2>Anasayfa</h2>
+<h5>Kullanici : ${kullanici.getKullaniciAdi()}</h5>
+
+<h2>Urunler</h2>
+<ul>
+    <li>Urun Adi - Birim Fiyati</li>
+    <#list urunler as urun>
+    <li>${product.getProductName()} - ${product.getPrice()} - <a href="/FinalProje/urun_ekle?urunid=${product.getProductId()}">Ekle</a></li>
+</#list>
+</ul>
+
+<h2>Alisveris Sepetim</h2>
+<ul>
+    <li>Urun Adi - Birim Fiyati</li>
+    <#list sepetim as urun>
+    <li>${product.getProductName()} - ${product.getPrice()} - <a href="/FinalProje/urun_kaldir?urunid=${product.getProductId()}">Kaldir</a></li>
+    </#list>
+</ul>
+
+<a href="/FinalProje/siparis_olustur">Siparis Olustur</a>
+<br><br>
+
+<a href="/FinalProje/giris_sayfasi">Cikis Yapmak Icin Tiklayiniz!</a>
+
+
+
+</body>
+</html>

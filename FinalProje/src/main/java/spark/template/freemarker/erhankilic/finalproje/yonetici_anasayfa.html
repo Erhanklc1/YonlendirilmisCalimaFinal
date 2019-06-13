@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Yonetici Sayfasi</title>
+</head>
+<body background= "C:\Users\90545\Desktop\background.jpg"> 
+
+<h2>Anasayfa</h2>
+<h5>Kullanici : ${kullanici.getKullaniciAdi()}</h5>
+
+<h4>Siparisler</h4>
+<ul>
+    <li>Siparis id - Kullanici Adi - Urun Idleri - Toplam Tutar</li>
+    <#list siparisler as siparis>
+    <li>${order.getOrderId()} - ${order.getUserName()} - ${order.getProductIDs()} - ${order.getSumPrice()}</li>
+    </#list>
+</ul>
+
+<h4>Urunler</h4>
+<ul>
+    <li>Urun Id - Urun Adi - Urun Kategorisi - Birim Fiyati</li>
+    <#list urunler as urun>
+    <li>${product.getProductId()} - ${product.getProductName()} - ${product.getProductCategory()} - ${product.getPrice()}</li>
+    </#list>
+</ul>
+
+
+<h4>Kullanicilar</h4>
+<ul>
+    <li>Kullanici Adi - Kullanici Sifresi - Kullanici Tipi - Cinsiyet - Yas </li>
+    <#list kullanicilar as kullanici>
+        <li>${user.getUserName()} - ${user.getPassword()} - ${user.getUserType()} - ${user.getGender()} - ${user.getAge()} </li>
+    </#list>
+</ul>
+
+<h4>Kullanici Ekle</h4>
+
+<form action="/FinalProje/admin/kullanici_ekle" method = "post" >
+
+      Kullanici adi: <br></br>
+    <input type="text" name="userName" />
+    <br></br>
+
+    Sifre: <br></br>
+    <input type="text" name="password" />
+    <br></br>
+
+   	Yas: <br></br>
+    <input type="text" name="age" />
+    <br></br>
+    
+    Cinsiyet: <br></br>
+    <select name="gender">
+        <option value="E">Erkek</option>
+        <option value="K">Kadin</option>
+        <option value="EK">Karisik :)</option>
+    </select>
+    <br></br>
+
+    <input type="submit" value="EKLE" />
+</form>
+
+<h4>Urun Ekle</h4>
+
+<form action="/FinalProje/admin/urun_ekle" method = "post" >
+
+    Urun Adi: <br></br>
+    <input type="text" name="urunadi" />
+    <br></br>
+
+    Urun Kategorisi: <br></br>
+    <input type="text" name="urunkategori" />
+    <br></br>
+
+    Fiyat: <br></br>
+    <input type="text" name="fiyat" />
+    <br></br>
+
+    <input type="submit" value="Ekle" />
+</form>
+
+<a href="/FinalProje/giris_sayfasi">Cikis Yapmak Icin Tiklayiniz!</a>
+
+</body>
+</html>
